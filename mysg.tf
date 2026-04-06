@@ -5,7 +5,7 @@ resource "aws_security_group" "test" {
 output "sg_id" {
   value = aws_security_group.test.id
 }
-
+/*
 data "terraform_remote_state" "foo" {
   backend = "remote"
 
@@ -17,7 +17,13 @@ data "terraform_remote_state" "foo" {
     }
   }
 }
+*/
+
+data "tfe_outputs" "foo" {
+  organization = "vmanral-org-1"
+  workspace = "cli-driven-workflow"
+}
 
 output "sg_info" {
-  value = data.terraform_remote_state.foo.outputs
+  value = data.tfe_outputs.foo
 }
