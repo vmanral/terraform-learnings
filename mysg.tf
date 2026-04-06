@@ -25,5 +25,5 @@ data "tfe_outputs" "foo" {
 }
 
 output "sg_info" {
-  value = data.tfe_outputs.foo
+  value = data.tfe_outputs.foo.values.sg_name
 }
