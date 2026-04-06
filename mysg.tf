@@ -24,6 +24,6 @@ data "tfe_outputs" "foo" {
   workspace = "cli-driven-workflow"
 }
 
-output "sg_info" {
+output "remote_sg_info" {
   value = data.tfe_outputs.foo.nonsensitive_values.sg_name
 }
