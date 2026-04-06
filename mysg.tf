@@ -6,6 +6,6 @@ output "sg_id" {
   value = aws_security_group.test.id
 }
 
-output "sg_name" {
+output "sgp_name" {
   value = aws_security_group.test.name
 }
